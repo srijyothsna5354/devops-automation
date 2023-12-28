@@ -1,14 +1,12 @@
 pipeline {
     agent any
-    tools{
-        maven 'maven 3.9.5'
     }
     stages{
-        stage('Build Maven'){
+        stage('git-checkout'){
             steps{
                 checkout([$class: 'GitSCM',
                           branches: [[name: '*/main']], // Branch to checkout
-                          userRemoteConfigs: [[url: 'https://github.com/username/repository.git']]]) // Git repository URL
+                          userRemoteConfigs: [[url: 'https://github.com/srijyothsna5354/devops-automation/tree/main']]]) // Git repository URL
             }
             }
         }
