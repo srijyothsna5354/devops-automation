@@ -1,13 +1,9 @@
 pipeline {
     agent any
     }
- environment {
-        // Define the Maven installation (if not defined in Jenkins Global Tools Configuration)
-        // For example:
-        // MAVEN_HOME = '/path/to/your/maven'
-         PATH = "/opt/homebrew/Cellar/maven/3.9.5/libexec"
-    }
-    
+tools{
+maven 'maven 3.9.5'
+I}
     stages{
         stage('git-checkout'){
             steps{
